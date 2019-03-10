@@ -8,6 +8,6 @@ namespace DAL.Entities
 
         public decimal TotalPrice { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }
