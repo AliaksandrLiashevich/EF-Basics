@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL.Context;
 
 namespace CLI
@@ -11,9 +7,11 @@ namespace CLI
     {
         static void Main(string[] args)
         {
-            AppDbContext _context = new AppDbContext();
+            DbPrinter printer = new DbPrinter(new Service(new AppDbContext()));
 
-            var items = _context.Items.ToList();
+            printer.PrintFullCustomersData();
+
+            Console.ReadKey();
         }
     }
 }
